@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import 'package:flutter/material.dart';
 import 'screens/home_page.dart';
@@ -8,6 +9,22 @@ const Color unhasBackground = Color(0xFFF7F7F9);
 
 void main() {
   runApp(const UnhasConnectApp());
+=======
+
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'screens/auth_wrapper.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(const MyApp());
+>>>>>>> c444b1f258ccd65bf35d6b028060f7744c9fe685
 }
 
 class UnhasConnectApp extends StatelessWidget {
@@ -16,6 +33,7 @@ class UnhasConnectApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+<<<<<<< HEAD
       // Informasi aplikasi
       debugShowCheckedModeBanner: false,
       title: 'UNHAS CONNECT',
@@ -38,11 +56,23 @@ class UnhasConnectApp extends StatelessWidget {
           foregroundColor: Colors.black,
           elevation: 0,
           centerTitle: false,
+=======
+      debugShowCheckedModeBanner: false,
+      title: 'UNHAS CONNECT',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+>>>>>>> c444b1f258ccd65bf35d6b028060f7744c9fe685
         ),
+        useMaterial3: true,
       ),
+<<<<<<< HEAD
 
       // Halaman pertama
       home: const HomePage(),
+=======
+      home: const AuthWrapper(),
+>>>>>>> c444b1f258ccd65bf35d6b028060f7744c9fe685
     );
   }
 }

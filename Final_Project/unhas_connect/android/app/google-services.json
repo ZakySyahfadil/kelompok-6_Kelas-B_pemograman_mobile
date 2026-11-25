@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "243251450316",
+    "project_id": "unhas-connect-43fd0",
+    "storage_bucket": "unhas-connect-43fd0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243251450316:android:05957a015133b97f4ccd69",
+        "android_client_info": {
+          "package_name": "com.example.unhas_connect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDzwtj0JZPI_zpXdesB7wbwtZsHhJRKkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
