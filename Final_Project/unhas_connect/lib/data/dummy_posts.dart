@@ -8,10 +8,10 @@ final List<Post> dummyPosts = [
     major: 'Informatika',
     content: 'Ada yang tahu jadwal KRS semester depan kapan ya?',
     category: 'Akademik',
-    imageUrl: 'https://picsum.photos/seed/unhas1/800/450',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUCjT8_YUByq_ili5f-6XAnhuQrfFpgee7AlqgWNjmew&s=10',
     createdAt: DateTime.now().subtract(const Duration(hours: 2)),
     likeCount: 124,
-    commentCount: 23,
+    commentCount: 3,
   ),
   Post(
     id: '2',
@@ -24,7 +24,7 @@ final List<Post> dummyPosts = [
     category: 'Event',
     createdAt: DateTime.now().subtract(const Duration(hours: 5)),
     likeCount: 87,
-    commentCount: 12,
+    commentCount: 1,
   ),
   Post(
     id: '3',
@@ -36,7 +36,7 @@ final List<Post> dummyPosts = [
     category: 'Organisasi',
     createdAt: DateTime.now().subtract(const Duration(days: 1)),
     likeCount: 45,
-    commentCount: 6,
+    commentCount: 0,
   ),
   Post(
     id: '4',
@@ -48,6 +48,6 @@ final List<Post> dummyPosts = [
     category: 'Lost & Found',
     createdAt: DateTime.now().subtract(const Duration(minutes: 30)),
     likeCount: 9,
-    commentCount: 3,
+    commentCount: 0,
   ),
 ];

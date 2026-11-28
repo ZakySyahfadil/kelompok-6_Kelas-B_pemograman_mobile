@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+
 import '../data/dummy_posts.dart';
+import '../data/dummy_comments.dart';
 import '../models/post.dart';
+import 'post_detail_page.dart';
+import '../repositories/comment_repository.dart';
 import '../theme/app_colors.dart';
 import '../widgets/post_card.dart';
 
@@ -12,6 +16,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  
+  // Nanti diganti dengan data dari Firestore
+  final CommentRepository _commentRepository = 
+    DummyCommentRepository.instance; 
+  
   static const _categories = [
     'Untukmu',
     'Terbaru',
@@ -53,7 +62,7 @@ class _HomePageState extends State<HomePage> {
     final posts = _posts;
 
     return Scaffold(
-      // ===== AppBar: logo + judul + menu titik tiga =====
+      // AppBar: logo + judul + menu titik tiga
       appBar: AppBar(
         toolbarHeight: 68,
         backgroundColor: Colors.white,
@@ -61,8 +70,11 @@ class _HomePageState extends State<HomePage> {
         titleSpacing: 16,
         title: Row(
           children: [
-            // Ganti dengan Image.asset('assets/logo.png') kalau sudah ada logo
-            const Icon(Icons.local_florist, color: unhasMaroon, size: 38),
+            Image.asset(
+              'assets/images/logo.png',
+              width: 36,
+              height: 36,
+            ),
             const SizedBox(width: 12),
             Container(width: 1.5, height: 38, color: unhasMaroon),
             const SizedBox(width: 12),
@@ -161,9 +173,23 @@ class _HomePageState extends State<HomePage> {
                     );
                   }
                   final post = posts[i - 1];
+
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 12),
-                    child: PostCard(key: ValueKey(post.id), post: post),
+                    child: PostCard(
+                      key: ValueKey(post.id),
+                      post: post,
+                      onCommentTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => PostDetailPage(
+                            post: post,
+                            repository: _commentRepository,
+                            currentUserId: dummyCurrentUserId,
+                          ),
+                        ),
+                      ),
+                    ),
                   );
                 },
               ),

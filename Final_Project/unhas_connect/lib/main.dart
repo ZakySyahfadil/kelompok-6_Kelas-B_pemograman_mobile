@@ -1,11 +1,9 @@
+import 'screens/auth_wrapper.dart';
+import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-import 'screens/auth_wrapper.dart';
+import 'theme/app_colors.dart';
 
-// Warna utama UNHAS CONNECT
-const Color unhasMaroon = Color(0xFF9E1B32);
-const Color unhasBackground = Color(0xFFF7F7F9);
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
